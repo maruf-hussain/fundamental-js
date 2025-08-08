@@ -35,7 +35,7 @@ function highestPrice(phones) {
    return minPrice;
 } 
 const minPhonePrice = highestPrice(phones);
-console.log(minPhonePrice); // Output: 140000
+console.log(`Name: ${minPhonePrice.name}, Price: ${minPhonePrice.price}`); // Output: { name: 'Xiaomi 13 Pro', price: 10000, brand: 'Xiaomi', color: 'Ceramic White' }
 
 // function highestPrice(phones) {
 //     let maxPrice = 0;
