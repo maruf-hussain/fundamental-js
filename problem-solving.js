@@ -16,11 +16,11 @@
 
 // Higest phone price..............................
 const phones = [
-    { name: 'iPhone 14 Pro Max', price: 120000, brand: 'Apple', color: 'Space Black' },
-    { name: 'Samsung Galaxy S23 Ultra', price: 140000, brand: 'Samsung', color: 'Phantom Black' },
-    { name: 'Google Pixel 7 Pro', price: 900000, brand: 'Google', color: 'Obsidian' },
-    { name: 'OnePlus 11 Pro', price: 80000, brand: 'OnePlus', color: 'Eternal Green' },
-    { name: 'Xiaomi 13 Pro', price: 10000, brand: 'Xiaomi', color: 'Ceramic White' },
+    { name: 'iPhone 14 Pro Max', price: 50000, brand: 'Apple', color: 'Space Black', quantity: 3 },
+    { name: 'Samsung Galaxy S23 Ultra', price: 40000, brand: 'Samsung', color: 'Phantom Black', quantity: 1 },
+    { name: 'Google Pixel 7 Pro', price: 22000, brand: 'Google', color: 'Obsidian', quantity: 1 },
+    { name: 'OnePlus 11 Pro', price: 20000, brand: 'OnePlus', color: 'Eternal Green', quantity: 1 },
+    { name: 'Xiaomi 13 Pro', price: 10000, brand: 'Xiaomi', color: 'Ceramic White', quantity: 1 },
 ];
 
 
@@ -58,12 +58,26 @@ const phones = [
 
 
 // Total Phone Price................................
-function totalPrice(phones){
+// function totalPrice(phones){
+//     let total = 0;
+//     for(const phone of phones){
+//          total = total + phone.price;
+//     }
+//     return total;
+// }
+// const result = totalPrice(phones);
+// console.log(result); // Output: 450000
+
+// quantity of phone................................
+
+
+function totalQuantityPrice(phones){
     let total = 0;
     for(const phone of phones){
-         total = total + phone.price;
+        const totalQuantity = phone.quantity * phone.price;
+         total = total + totalQuantity;
     }
     return total;
 }
-const result = totalPrice(phones);
-console.log(result); // Output: 450000
+const result = totalQuantityPrice(phones);
+console.log(result)
