@@ -57,7 +57,8 @@ const phones = [
 // console.log(maxPhone); // Output: { name: 'Samsung Galaxy S23 Ultra', price: 140000, brand: 'Samsung', color: 'Phantom Black' }         
 
 
-// Total Phone Price................................
+// ......................Total Phone Price................................
+
 // function totalPrice(phones){
 //     let total = 0;
 //     for(const phone of phones){
@@ -68,16 +69,39 @@ const phones = [
 // const result = totalPrice(phones);
 // console.log(result); // Output: 450000
 
-// quantity of phone................................
 
 
-function totalQuantityPrice(phones){
-    let total = 0;
-    for(const phone of phones){
-        const totalQuantity = phone.quantity * phone.price;
-         total = total + totalQuantity;
+// ....................quantity of phone................................
+
+// function totalQuantityPrice(phones){
+//     let total = 0;
+//     for(const phone of phones){
+//         const totalQuantity = phone.quantity * phone.price;
+//          total = total + totalQuantity;
+//     }
+//     return total;
+// }
+// const result = totalQuantityPrice(phones);
+// console.log(result)
+
+// ...............Discounted Price................................
+function discountedPrice(quantity) {
+    if(quantity <= 100) {
+        total = quantity * 100;
+        return total;
     }
-    return total;
+    else if(quantity <= 200) {
+        total = quantity * 90;
+        return total;
+    }
+    else if(quantity <= 300) {
+        total = quantity * 80;
+        return total;
+    }
+    else {
+        total = quantity * 70;
+        return total;
+    }
 }
-const result = totalQuantityPrice(phones);
-console.log(result)
+const totalDiscountedPrice = discountedPrice(400);
+console.log(totalDiscountedPrice); // Output: 20000
