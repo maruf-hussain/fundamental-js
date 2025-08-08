@@ -23,20 +23,24 @@ const phones = [
     { name: 'Xiaomi 13 Pro', price: 10000, brand: 'Xiaomi', color: 'Ceramic White' },
 ];
 
-function highestPrice(phones) {
-    let minPrice =phones[0];
-   
-    for (const phone of phones) {
-        if (phone.price < minPrice.price) {
-            minPrice = phone;
-           
-        }
-    }
-   return minPrice;
-} 
-const minPhonePrice = highestPrice(phones);
-console.log(`Name: ${minPhonePrice.name}, Price: ${minPhonePrice.price}`); // Output: { name: 'Xiaomi 13 Pro', price: 10000, brand: 'Xiaomi', color: 'Ceramic White' }
 
+// ...................Min phone price..............................
+// function minPrice(phones) {
+//     let minPrice =phones[0];
+   
+//     for (const phone of phones) {
+//         if (phone.price < minPrice.price) {
+//             minPrice = phone;
+//         }
+//     }
+//    return minPrice;
+// } 
+// const minPhonePrice = minPrice(phones);
+// console.log(`Name: ${minPhonePrice.name}, Price: ${minPhonePrice.price}`); // Output: { name: 'Xiaomi 13 Pro', price: 10000, brand: 'Xiaomi', color: 'Ceramic White' }
+
+
+
+// ...............................Higest phone price.............................
 // function highestPrice(phones) {
 //     let maxPrice = 0;
 //     let maxPhone = null;
@@ -53,3 +57,13 @@ console.log(`Name: ${minPhonePrice.name}, Price: ${minPhonePrice.price}`); // Ou
 // console.log(maxPhone); // Output: { name: 'Samsung Galaxy S23 Ultra', price: 140000, brand: 'Samsung', color: 'Phantom Black' }         
 
 
+// Total Phone Price................................
+function totalPrice(phones){
+    let total = 0;
+    for(const phone of phones){
+         total = total + phone.price;
+    }
+    return total;
+}
+const result = totalPrice(phones);
+console.log(result); // Output: 450000
