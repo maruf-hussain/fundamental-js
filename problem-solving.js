@@ -16,25 +16,40 @@
 
 // Higest phone price..............................
 const phones = [
-    { name: 'iPhone 14 Pro Max', price: 20000, brand: 'Apple', color: 'Space Black' },
+    { name: 'iPhone 14 Pro Max', price: 120000, brand: 'Apple', color: 'Space Black' },
     { name: 'Samsung Galaxy S23 Ultra', price: 140000, brand: 'Samsung', color: 'Phantom Black' },
-    { name: 'Google Pixel 7 Pro', price: 90000, brand: 'Google', color: 'Obsidian' },
+    { name: 'Google Pixel 7 Pro', price: 900000, brand: 'Google', color: 'Obsidian' },
     { name: 'OnePlus 11 Pro', price: 80000, brand: 'OnePlus', color: 'Eternal Green' },
     { name: 'Xiaomi 13 Pro', price: 10000, brand: 'Xiaomi', color: 'Ceramic White' },
 ];
 
 function highestPrice(phones) {
-    let maxPrice = [0];
- 
+    let minPrice =phones[0];
+   
     for (const phone of phones) {
-        if (phone.price > maxPrice) {
-            maxPrice = phone.price;
+        if (phone.price < minPrice.price) {
+            minPrice = phone;
            
         }
     }
-    return maxPrice;
-} ;
-console.log(highestPrice(phones)); 
+   return minPrice;
+} 
+const minPhonePrice = highestPrice(phones);
+console.log(minPhonePrice); // Output: 140000
 
+// function highestPrice(phones) {
+//     let maxPrice = 0;
+//     let maxPhone = null;
+
+//     for (const phone of phones) {
+//         if (phone.price > maxPrice) {
+//             maxPrice = phone.price;
+//             maxPhone = phone;
+//         }
+//     }
+//     return maxPhone;
+// }
+// const maxPhone = highestPrice(phones);
+// console.log(maxPhone); // Output: { name: 'Samsung Galaxy S23 Ultra', price: 140000, brand: 'Samsung', color: 'Phantom Black' }         
 
 
